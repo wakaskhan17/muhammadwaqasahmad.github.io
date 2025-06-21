@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Waqas Ahmad | Project Manager & IT Specialist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --text: #333;
+            --text-light: #7f8c8d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text);
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--secondary);
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--accent);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: white;
+            font-weight: 500;
+            position: relative;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero h2 {
+            font-size: 24px;
+            font-weight: 300;
+            margin-bottom: 30px;
+            color: var(--light);
+        }
+        
+        .hero p {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-size: 18px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            margin-left: 15px;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        /* About Section */
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+        
+        /* Skills Section */
+        .skills {
+            background-color: var(--light);
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .skill-card i {
+            font-size: 40px;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .skill-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: var(--secondary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--secondary);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::after {
+            right: -10px;
+        }
+        
+        .right::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .timeline-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .timeline-content h4 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+        
+        .timeline-content p {
+            color: var(--text-light);
+        }
+        
+        /* Projects Section */
+        .projects {
+            background-color: var(--light);
+        }
+        
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-img img {
+            transform: scale(1.1);
+        }
+        
+        .project-content {
+            padding: 20px;
+        }
+        
+        .project-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .project-content p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .project-tag {
+            background: var(--light);
+            color: var(--secondary);
+            padding: 5px 10px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        /* Certifications Section */
+        .certifications-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .certification-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .certification-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .certification-icon {
+            font-size: 30px;
+            color: var(--secondary);
+        }
+        
+        .certification-text h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+        
+        .certification-text p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--light);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+        
+        .contact-info {
+            margin-bottom: 30px;
+        }
+        
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .contact-info p {
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+        
+        .contact-info ul {
+            list-style: none;
+        }
+        
+        .contact-info ul li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-info ul li i {
+            color: var(--secondary);
+            font-size: 20px;
+        }
+        
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--secondary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+        
+        .contact-form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-col p {
+            margin-bottom: 15px;
+            color: var(--light);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--light);
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--light);
+            font-size: 14px;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--accent);
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1001;
+            overflow-y: auto;
+            padding: 50px 0;
+        }
+        
+        .modal-content {
+            background: white;
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        
+        .modal-header {
+            padding: 20px;
+            background: var(--primary);
+            color: white;
+            position: relative;
+        }
+        
+        .modal-header h3 {
+            font-size: 24px;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .close-modal:hover {
+            color: var(--accent);
+            transform: rotate(90deg);
+        }
+        
+        .modal-body {
+            padding: 30px;
+        }
+        
+        .modal-body img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 21px;
+            }
+            
+            .left::after, .right::after {
+                left: 21px;
+            }
+            
+            .right {
+                left: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 15px;
+            }
+            
+            nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--primary);
+                transition: all 0.5s ease;
+                z-index: 999;
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                padding: 30px;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero h2 {
+                font-size: 20px;
+            }
+            
+            .btn-group {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+            }
+            
+            .section {
+                padding: 70px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 30px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">Waqas <span>Ahmad</span></div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Muhammad Waqas Ahmad</h1>
+            <h2>Project Manager | IT, Telecom, IoT & Connectivity Specialist</h2>
+            <p>A versatile Project Manager with a proven track record of delivering high-impact IT, telecom, IoT, Fibre infrastructure, and cloud infrastructure projects that consistently align technology with critical business goals, ensuring rapid and sustainable success.</p>
+            <div class="btn-group">
+                <a href="#contact" class="btn">Get In Touch</a>
+                <a href="#projects" class="btn btn-outline">View My Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Story</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src=" https://media.licdn.com/dms/image/v2/D4E03AQHv5Mq3EEy_eQ/profile-displayphoto-shrink_800_800/B4EZdeVamyHcAg-/0/1749634362321?e=1755734400&v=beta&t=UvtNvBQOly5f9yTcwX8wpMIVQaAf9FtiJ6FhsSsEykg" alt="Waqas Ahmad">
+                </div>
+                <div class="about-text">
+                    <h3>About Me</h3>
+                    <p>I am an accomplished Project Manager boasting over 15 years of extensive expertise in steering complex telecommunications, information technology (IT), and digital transformation projects. My core specialization lies in effectively bridging the inherent gap between advanced technology solutions and practical business objectives.</p>
+                    <p>My robust educational foundation includes a strong background in electronic engineering, complemented by a master's degree in project management. This dual qualification provides me with both the technical depth and the strategic management acumen essential for navigating today's intricate project landscapes.</p>
+                    <p>Beyond technical proficiency, I am deeply passionate about the execution of sustainable, ethical, and safe projects, firmly believing that responsible project management is paramount to long-term success and societal benefit.</p>
+                    <p>Outside of my professional endeavors, I maintain a keen interest in exploring innovative technological trends and immersing myself in diverse cultural experiences.</p>
+                    <a href="#experience" class="btn">View My Experience</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>What I Offer</h2>
+            </div>
+            <div class="skills-container">
+                <div class="skill-card fade-in">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>Project Management</h3>
+                    <p>Expert application of both Agile and Waterfall methodologies to effectively manage IT, telecommunications, and large-scale infrastructure projects, ensuring flexibility and structured delivery where appropriate.</p>
+                </div>
+                <div class="skill-card fade-in">
+                    <i class="fas fa-tower-broadcast"></i>
+                    <h3>Telecom Infrastructure</h3>
+                    <p>Comprehensive expertise in the planning, rigorous assessment, and strategic modernization of critical telecom infrastructure, with a deep focus on advanced fiber optic and VSAT networks.</p>
+                </div>
+                <div class="skill-card fade-in">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Cloud Engineering</h3>
+                    <p>Proficient in the strategic design and seamless deployment of robust cloud service architectures, including specialized experience with VMware, OpenStack, and major public cloud platforms.</p>
+                </div>
+                <div class="skill-card fade-in">
+                    <i class="fas fa-microchip"></i>
+                    <h3>IoT & Smart Cities</h3>
+                    <p>A visionary approach to developing and deploying innovative Internet of Things (IoT) solutions, with particular emphasis on LoRa-based technologies for smart lighting systems and smart parking solutions.</p>
+                </div>
+                <div class="skill-card fade-in">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Risk Management</h3>
+                    <p>Implementation of rigorous safety protocols and proactive risk mitigation strategies throughout all phases of project execution, prioritizing the well-being of personnel and the security of assets.</p>
+                </div>
+                <div class="skill-card fade-in">
+                    <i class="fas fa-users"></i>
+                    <h3>Stakeholder Management</h3>
+                    <p>Highly effective communication and skilled coordination with multi-disciplinary teams, diverse external vendors, and critical stakeholders, ensuring alignment of objectives and fostering collaborative environments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section" id="experience">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Experience</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item left fade-in">
+                    <div class="timeline-content">
+                        <h3>5000km LDN Fibre Repair Project</h3>
+                        <h4>Strategic In-House Team Formation and Execution</h4>
+                        <p>Spearheaded a transformative 5000km fiber optic cable rehabilitation project under a Ministry of Defence framework. Built and led an 80+ member team, achieving 33% profit margin through complete in-house execution.</p>
+                        <button class="btn view-details" data-project="ldn">View Details</button>
+                    </div>
+                </div>
+                <div class="timeline-item right fade-in">
+                    <div class="timeline-content">
+                        <h3>National Broadband Expansion</h3>
+                        <h4>Southern Region Deployment</h4>
+                        <p>Oversaw deployment of 200+ fiber cabinets across 4 cities with $25M+ investment. Managed full lifecycle from survey to handover, optimizing logistics for parallel rollout across multiple cities.</p>
+                        <button class="btn view-details" data-project="broadband">View Details</button>
+                    </div>
+                </div>
+                <div class="timeline-item left fade-in">
+                    <div class="timeline-content">
+                        <h3>Saudi Telecom OSP/ISP Fibre Projects</h3>
+                        <h4>Multi-Type Fibre Deployments across KSA</h4>
+                        <p>Delivered diverse fiber projects including MSAN, FTTM, FTTH and relocations. Managed all phases from survey to handover while ensuring compliance with STC standards and KSA regulations.</p>
+                        <button class="btn view-details" data-project="stc">View Details</button>
+                    </div>
+                </div>
+                <div class="timeline-item right fade-in">
+                    <div class="timeline-content">
+                        <h3>Nokia IoT Smart City Deployment</h3>
+                        <h4>Smart City Solutions Implementation</h4>
+                        <p>Led deployment of Nokia IoT platform enabling smart lighting, waste management, people counting, air quality monitoring and smart parking. Developed in-house protocol converter saving €400k.</p>
+                        <button class="btn view-details" data-project="iot">View Details</button>
+                    </div>
+                </div>
+                <div class="timeline-item left fade-in">
+                    <div class="timeline-content">
+                        <h3>End-to-End VSAT Connectivity</h3>
+                        <h4>46 Site Satellite Network Deployment</h4>
+                        <p>Managed full deployment of VSAT satellite connectivity across 46 sites, from design to handover. Delivered secure, scalable communication network for remote locations.</p>
+                        <button class="btn view-details" data-project="vsat">View Details</button>
+                    </div>
+                </div>
+                <div class="timeline-item right fade-in">
+                    <div class="timeline-content">
+                        <h3>SD-WAN Deployment</h3>
+                        <h4>Using Nokia Platforms</h4>
+                        <p>Directed rollout of SD-WAN infrastructure using Nokia solutions, increasing network agility, enabling centralized management and optimizing traffic routing for enterprise clients.</p>
+                        <button class="btn view-details" data-project="sdwan">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects" id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>Key Project Highlights</h2>
+            </div>
+            <div class="projects-container">
+                <div class="project-card fade-in">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Smart City">
+                    </div>
+                    <div class="project-content">
+                        <h3>Nokia IoT Smart City Deployment</h3>
+                        <p>Deployed state-of-the-art IoT platform enabling smart lighting, waste management, people counting, air quality monitoring and smart parking solutions.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">IoT</span>
+                            <span class="project-tag">Smart City</span>
+                            <span class="project-tag">LoRa</span>
+                            <span class="project-tag">MQTT</span>
+                        </div>
+                        <button class="btn view-details" data-project="iot">View Details</button>
+                    </div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Fibre Network">
+                    </div>
+                    <div class="project-content">
+                        <h3>5000km LDN Fibre Repair Project</h3>
+                        <p>Spearheaded major 5000km fibre optic cable rehabilitation project under MoD framework with complete in-house execution.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Fibre Optics</span>
+                            <span class="project-tag">Infrastructure</span>
+                            <span class="project-tag">Team Building</span>
+                            <span class="project-tag">In-House Execution</span>
+                        </div>
+                        <button class="btn view-details" data-project="ldn">View Details</button>
+                    </div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Broadband Expansion">
+                    </div>
+                    <div class="project-content">
+                        <h3>National Broadband Expansion</h3>
+                        <p>Deployed 200+ fiber cabinets across 4 cities as part of Saudi Arabia's National Broadband initiative with $25M+ investment.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">FTTH</span>
+                            <span class="project-tag">Broadband</span>
+                            <span class="project-tag">Regional Deployment</span>
+                            <span class="project-tag">Infrastructure</span>
+                        </div>
+                        <button class="btn view-details" data-project="broadband">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="section" id="certifications">
+        <div class="container">
+            <div class="section-title">
+                <h2>Certifications & Credentials</h2>
+            </div>
+            <div class="certifications-container">
+                <div class="certification-card fade-in">
+                    <div class="certification-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="certification-text">
+                        <h3>Project Management Professional (PMP)</h3>
+                        <p>Validating expertise in leading and directing projects and teams</p>
+                    </div>
+                </div>
+                <div class="certification-card fade-in">
+                    <div class="certification-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="certification-text">
+                        <h3>Certified Scrum Master</h3>
+                        <p>Demonstrating proficiency in Agile methodologies</p>
+                    </div>
+                </div>
+                <div class="certification-card fade-in">
+                    <div class="certification-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="certification-text">
+                        <h3>EPI Certified Data Center Professional</h3>
+                        <p>Confirming knowledge in data center design and operations</p>
+                    </div>
+                </div>
+                <div class="certification-card fade-in">
+                    <div class="certification-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="certification-text">
+                        <h3>EPI Data Center Facilities Certification</h3>
+                        <p>Specializing in physical infrastructure of data centers</p>
+                    </div>
+                </div>
+                <div class="certification-card fade-in">
+                    <div class="certification-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="certification-text">
+                        <h3>Managing Successful Programs (MSP)</h3>
+                        <p>Expertise in program-level management</p>
+                    </div>
+                </div>
+                <div class="certification-card fade-in">
+                    <div class="certification-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="certification-text">
+                        <h3>MSc in Project Management</h3>
+                        <p>Currently pursuing at Northampton University</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>I'm currently open to new opportunities and interesting projects. Feel free to reach out if you'd like to collaborate or just say hello!</p>
+                    <ul>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>wakaskhan17@gmail.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>07456142055</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Derby, United Kingdom</span>
+                        </li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Waqas Ahmad</h3>
+                    <p>Project Manager | IT, Telecom, IoT & Connectivity Specialist with 15+ years of experience delivering high-impact technology projects.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Project Management</a></li>
+                        <li><a href="#">Telecom Infrastructure</a></li>
+                        <li><a href="#">Cloud Engineering</a></li>
+                        <li><a href="#">IoT & Smart Cities</a></li>
+                        <li><a href="#">Risk Management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><a href="mailto:wakaskhan17@gmail.com">wakaskhan17@gmail.com</a></li>
+                        <li><a href="tel:07456142055">07456142055</a></li>
+                        <li><a href="#">Derby, United Kingdom</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Muhammad Waqas Ahmad. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Project Modals -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Project Details</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be loaded here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const nav = document.getElementById('nav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = nav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (nav.classList.contains('active')) {
+                        nav.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
+            });
+        });
+        
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('active');
+            } else {
+                backToTopBtn.classList.remove('active');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Project Modal
+        const modal = document.getElementById('projectModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalBody = document.getElementById('modalBody');
+        const closeModal = document.querySelector('.close-modal');
+        const viewDetailsBtns = document.querySelectorAll('.view-details');
+        
+        // Project Data
+        const projects = {
+            ldn: {
+                title: "5000km LDN Fibre Repair Project",
+                image: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80",
+                description: `
+                    <p><strong>Strategic In-House Team Formation and Execution for National-Scale Fibre Restoration</strong></p>
+                    <p>I spearheaded a transformative and major infrastructure rehabilitation project that spanned an impressive 5000 kilometers of long-distance fiber optic cable. This monumental undertaking was conducted under a strict Ministry of Defence (MoD) framework and was specifically designed to address a myriad of legacy telecom issues, including incomplete documentation, widespread poor quality infrastructure, and critical uptime demands that could not be compromised.</p>
+                    <p><strong>Key Achievements:</strong></p>
+                    <ul>
+                        <li>Achieved a remarkable 33% profit margin by completely eliminating outsourcing dependencies</li>
+                        <li>Implemented stringent safety protocols resulting in zero incidents throughout the project</li>
+                        <li>Doubled operational capacity through intensive equipment operator training</li>
+                        <li>Transformed company capabilities from pure project management to full field execution</li>
+                    </ul>
+                    <p><strong>Execution Highlights:</strong></p>
+                    <ul>
+                        <li>Built an 80+ member team of engineers, foremen, and skilled labor</li>
+                        <li>Developed comprehensive Project Organization Structure with clear roles</li>
+                        <li>Implemented hybrid Agile methodology with MS Project and Trello</li>
+                        <li>Established rigorous three-level quality check system</li>
+                    </ul>
+                `
+            },
+            broadband: {
+                title: "National Broadband Expansion – Southern Region Deployment",
+                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+                description: `
+                    <p><strong>Regional Leadership for Large-Scale Cabinet & Fibre Rollout Across 4 Major Cities</strong></p>
+                    <p>I meticulously oversaw the entire deployment lifecycle of over 200 state-of-the-art fiber cabinets as part of Saudi Arabia's ambitious National Broadband initiative. Each cabinet was strategically designed to cover an extensive area ranging from 3km to 6km of fiber optic infrastructure, contributing to a total regional investment exceeding $25 million.</p>
+                    <p><strong>Key Responsibilities:</strong></p>
+                    <ul>
+                        <li>Managed full project lifecycle across Jizan, Abha, Al-Baha, and Najran</li>
+                        <li>Conducted subcontractor selection and evaluation processes</li>
+                        <li>Directed a team of 20 fiber supervisors, 60 fiber technicians, and 25 civil engineers</li>
+                        <li>Designed execution strategies for parallel rollout across multiple cities</li>
+                        <li>Implemented consistent QA/QC and safety standards through regular audits</li>
+                    </ul>
+                    <p><strong>Project Achievements:</strong></p>
+                    <ul>
+                        <li>Successfully delivered over 200 broadband cabinets on time and within budget</li>
+                        <li>Enabled strategic digital infrastructure growth in southern regions</li>
+                        <li>Developed operational playbooks adopted as best practice across STC zones</li>
+                        <li>Made substantial contribution to Saudi Arabia's national fiber connectivity goals</li>
+                    </ul>
+                `
+            },
+            stc: {
+                title: "Saudi Telecom OSP/ISP Fibre Infrastructure Projects",
+                image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+                description: `
+                    <p><strong>Comprehensive Management of Multi-Type Fibre Deployments across KSA</strong></p>
+                    <p>Throughout my tenure, I successfully delivered a broad spectrum of critical fiber deployment projects under the overarching Saudi Telecom umbrella. This diverse portfolio included initiatives such as MSAN (Multi-Service Access Node), Key Account deployments, FTTM (Fiber-to-the-Mobile), FTTH (Fiber-to-the-Home) Commercial rollouts, and complex Relocation projects.</p>
+                    <p><strong>Scope of Work & Responsibilities:</strong></p>
+                    <ul>
+                        <li>Managed comprehensive site survey operations in diverse environments</li>
+                        <li>Oversaw design validation and approvals with central planning teams</li>
+                        <li>Directed on-site implementation ensuring quality and safety protocols</li>
+                        <li>Led documentation and as-built submission processes</li>
+                        <li>Ensured accurate billing and alignment with contract deliverables</li>
+                        <li>Maintained strict compliance with STC and Ministry of Communications standards</li>
+                    </ul>
+                    <p><strong>Project Highlights:</strong></p>
+                    <ul>
+                        <li>Executed end-to-end fiber projects in commercial zones and urban terrains</li>
+                        <li>Fostered collaboration with multidisciplinary teams to meet strict timelines</li>
+                        <li>Built robust relationships with STC regional departments</li>
+                        <li>Streamlined approvals and shortened project handover cycles</li>
+                    </ul>
+                `
+            },
+            iot: {
+                title: "Nokia IoT Smart City Deployment",
+                image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+                description: `
+                    <p><strong>Smart City Solutions Implementation</strong></p>
+                    <p>As a key leader, I spearheaded the comprehensive deployment of a state-of-the-art Nokia IoT platform, which served as the foundational technology stack to enable a suite of advanced smart city solutions across various urban environments. This initiative was critical in transforming traditional city operations into more connected, efficient, and responsive systems.</p>
+                    <p><strong>Key Use Cases:</strong></p>
+                    <ul>
+                        <li>Outdoor Smart Lighting: Intelligent systems optimizing energy consumption</li>
+                        <li>Waste Management Monitoring: Sensors enabling dynamic collection routes</li>
+                        <li>People Counting: For crowd control and urban planning</li>
+                        <li>Air Quality Monitoring: Continuous environmental safety monitoring</li>
+                        <li>Smart Parking Solutions: Reducing congestion and improving mobility</li>
+                    </ul>
+                    <p><strong>Innovations & Outcomes:</strong></p>
+                    <ul>
+                        <li>Developed in-house protocol converter integrating LoRa and MQTT APIs</li>
+                        <li>Achieved €400,000 cost savings by reducing vendor dependencies</li>
+                        <li>Designed custom applications for scalable IoT services</li>
+                        <li>Improved public services while reducing operational costs</li>
+                        <li>Enhanced environmental sustainability in deployed urban areas</li>
+                    </ul>
+                `
+            },
+            vsat: {
+                title: "End-to-End VSAT Connectivity Deployment",
+                image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80",
+                description: `
+                    <p><strong>46 Site Satellite Network Deployment</strong></p>
+                    <p>I was entrusted with the comprehensive management of the end-to-end deployment of VSAT (Very Small Aperture Terminal) satellite connectivity across 46 distinct client sites. This critical infrastructure project was designed to provide robust and reliable communication solutions, particularly in remote, underserved, or geographically challenging locations where traditional terrestrial networks were either unavailable or unreliable.</p>
+                    <p><strong>Responsibilities:</strong></p>
+                    <ul>
+                        <li>Oversaw all stages from technical design to client handover</li>
+                        <li>Coordinated with multiple vendors and suppliers</li>
+                        <li>Supervised physical installation and rigorous testing</li>
+                        <li>Ensured strict alignment with client requirements</li>
+                        <li>Guaranteed peak operational efficiency and performance</li>
+                    </ul>
+                    <p><strong>Outcome:</strong></p>
+                    <ul>
+                        <li>Delivered highly secure, scalable satellite communication network</li>
+                        <li>Maintained exceptional levels of high availability</li>
+                        <li>Supported essential business continuity in demanding environments</li>
+                        <li>Provided reliable connectivity where terrestrial networks were unavailable</li>
+                    </ul>
+                `
+            },
+            sdwan: {
+                title: "SD-WAN Deployment Using Nokia Platforms",
+                image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1465&q=80",
+                description: `
+                    <p><strong>Modern Network Infrastructure Rollout</strong></p>
+                    <p>I directed the strategic rollout of modern SD-WAN (Software-Defined Wide Area Network) infrastructure, specifically utilizing cutting-edge Nokia solutions. The primary objectives of this deployment were to significantly increase network agility, enable centralized management capabilities, and meticulously optimize traffic routing for a diverse portfolio of enterprise clients, moving beyond traditional, rigid network architectures.</p>
+                    <p><strong>Responsibilities:</strong></p>
+                    <ul>
+                        <li>Coordinated with various vendors for seamless integration</li>
+                        <li>Designed sophisticated network architecture</li>
+                        <li>Facilitated and supervised testing and deployment phases</li>
+                        <li>Ensured minimal disruption to business operations</li>
+                    </ul>
+                    <p><strong>Outcome:</strong></p>
+                    <ul>
+                        <li>Dramatically enhanced network flexibility and reliability</li>
+                        <li>Reduced operational costs through simplified management</li>
+                        <li>Optimized resource utilization</li>
+                        <li>Improved end-user experience through dynamic traffic management</li>
+                    </ul>
+                `
+            }
+        };
+        
+        // Open Modal with Project Details
+        viewDetailsBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const projectId = btn.getAttribute('data-project');
+                const project = projects[projectId];
+                
+                modalTitle.textContent = project.title;
+                modalBody.innerHTML = `
+                    <img src="${project.image}" alt="${project.title}">
+                    ${project.description}
+                `;
+                
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        // Close Modal
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Close Modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Form Submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would typically send the data to a server
+            console.log('Form submitted:', data);
+            
+            // Show success message
+            alert('Thank you for your message! I will get back to you soon.');
+            
+            // Reset form
+            contactForm.reset();
+        });
+        
+        // Animation on Scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Initialize elements as invisible
+        fadeElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+        
+        // Check on scroll and load
+        window.addEventListener('scroll', fadeInOnScroll);
+        window.addEventListener('load', fadeInOnScroll);
+    </script>
+</body>
+</html>
